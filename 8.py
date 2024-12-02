@@ -4,10 +4,20 @@ import math
 
 def perform_operation(operation):
     """
-    Выполняет операцию над двумя числами и отображает результат.
+    Выполняет арифметическую операцию над двумя числами и отображает результат в диалоговом окне.
 
     Параметры:
-    operation (str): Операция, которую нужно выполнить ('Addition', 'Subtraction', 'Multiplication', 'Division', 'SquareRoot', 'Power').
+    operation (str): Операция, которую нужно выполнить. Возможные значения:
+                     'Addition' - сложение,
+                     'Subtraction' - вычитание,
+                     'Multiplication' - умножение,
+                     'Division' - деление,
+                     'SquareRoot' - квадратный корень,
+                     'Power' - возведение в степень.
+
+    Исключения:
+    ValueError: Возникает, если введенные значения не могут быть преобразованы в числа.
+    ZeroDivisionError: Возникает, если попытаться разделить на ноль.
     """
     try:
         if operation in ['Addition', 'Subtraction', 'Multiplication', 'Division']:
@@ -46,7 +56,10 @@ def perform_operation(operation):
 
 def clear_entries():
     """
-    Очищает поля ввода, удаляя введенные пользователем данные.
+    Очищает текстовые поля ввода, удаляя введенные пользователем данные.
+    
+    Эта функция сбрасывает значения в полях ввода для дальнейших вычислений, 
+    обеспечивая чистое состояние интерфейса калькулятора.
     """
     entry_num1.delete(0, tk.END)
     entry_num2.delete(0, tk.END)
